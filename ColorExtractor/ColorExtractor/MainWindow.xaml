@@ -1,0 +1,134 @@
+﻿<Window x:Class="ColorExtractor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ColorExtractor" 
+        mc:Ignorable="d"
+        Title="Color Extractor" Height="800" MinHeight="800" Width="1000" MinWidth="1000" WindowStartupLocation="CenterScreen" Background="LightGray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <Canvas x:Name="mainCanvas" Grid.Column="0" Background="White" Loaded="mainCanvas_Loaded">
+                <Image x:Name="mainImage" Width="{Binding Path=ActualWidth, ElementName=mainCanvas}" Height="{Binding Path=ActualHeight, ElementName=mainCanvas}" Stretch="Fill"/>
+            </Canvas>
+            <Button Name="previousColorProfileButton" Content="Previous Color Profile" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Grid.Column="1" Margin="10,10,0,0" Click="previousColorProfileButton_Click"/>
+            <Button Name="loadButton" Content="Load Image" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Grid.Column="1" Margin="10,102,0,0" Click="loadButton_Click"/>
+            <ComboBox Name="colorModelComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Grid.Column="1" Margin="10,127,0,0" DropDownClosed="colorModeComboBox_DropDownClosed">
+                <ComboBoxItem IsSelected="True">YCbCr</ComboBoxItem>
+                <ComboBoxItem>HSV</ComboBoxItem>
+                <ComboBoxItem>Lab</ComboBoxItem>
+            </ComboBox>
+            <Button Content="Separate Channels" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Grid.Column="1" Margin="10,154,0,0" Click="separateChannelsButton_Click"/>
+            <GroupBox Header="Lab Settings" HorizontalAlignment="Left" Height="255" VerticalAlignment="Top" Width="269" Grid.Column="1" Margin="10,179,0,0">
+                <StackPanel>
+                    <DockPanel>
+                        <Label Content="Predefined color profile"/>
+                        <ComboBox Name="colorProfileCombobox" DropDownClosed="colorProfileCombobox_DropDownClosed">
+                            <ComboBoxItem IsSelected="True" Name="sRGB">sRGB</ComboBoxItem>
+                            <ComboBoxItem Name="AdobeRGB">AdobeRGB</ComboBoxItem>
+                            <ComboBoxItem Name="AppleRGB">AppleRGB</ComboBoxItem>
+                            <ComboBoxItem Name="CIERGB">CIERGB</ComboBoxItem>
+                            <ComboBoxItem Name="WideGamut">WideGamut</ComboBoxItem>
+                            <ComboBoxItem Name="Własny">Własny</ComboBoxItem>
+                        </ComboBox>
+                    </DockPanel>
+                    <DockPanel>
+                        <Label Width="135"  Content="Predefined illuminat"/>
+                        <ComboBox Name="illuminatCombobox" IsEnabled="False" DropDownClosed="IlluminatCombobox_DropDownClosed">
+                            <ComboBoxItem Name="A">A</ComboBoxItem>
+                            <ComboBoxItem Name="B">B</ComboBoxItem>
+                            <ComboBoxItem Name="C">C</ComboBoxItem>
+                            <ComboBoxItem Name="D50">D50</ComboBoxItem>
+                            <ComboBoxItem Name="D55">D55</ComboBoxItem>
+                            <ComboBoxItem Name="D65" IsSelected="True">D65</ComboBoxItem>
+                            <ComboBoxItem Name="D75">D75</ComboBoxItem>
+                            <ComboBoxItem Name="w9300K">9300K</ComboBoxItem>
+                            <ComboBoxItem Name="E">E</ComboBoxItem>
+                            <ComboBoxItem Name="F2">F2</ComboBoxItem>
+                            <ComboBoxItem Name="F7">F7</ComboBoxItem>
+                            <ComboBoxItem Name="F11">F11</ComboBoxItem>
+                            <ComboBoxItem Name="Własna">Własna</ComboBoxItem>
+                        </ComboBox>
+                    </DockPanel>
+                    <Label/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        
+                        <Label Content="Chroamticity" Grid.Row="0" Grid.Column="0"/>
+                        <Label Content="x" Grid.Row="0" Grid.Column="1"/>
+                        <Label Content="y" Grid.Row="0" Grid.Column="2"/>
+
+                        <Label Content="Red primary" Grid.Row="1" Grid.Column="0"/>
+                        <TextBox x:Name="xRedTextBox" Grid.Row="1" Grid.Column="1" Text="0,64" IsEnabled="False" LostFocus="xRedTextBox_LostFocus"/>
+                        <TextBox x:Name="yRedTextBox" Grid.Row="1" Grid.Column="2" Text="0,33" IsEnabled="False" LostFocus="yRedTextBox_LostFocus"/>
+
+                        <Label Content="Green primary" Grid.Row="2" Grid.Column="0"/>
+                        <TextBox x:Name="xGreenTextBox" Grid.Row="2" Grid.Column="1" Text="0,3" IsEnabled="False" LostFocus="xGreenTextBox_LostFocus"/>
+                        <TextBox x:Name="yGreenTextBox" Grid.Row="2" Grid.Column="2" Text="0,6" IsEnabled="False" LostFocus="yGreenTextBox_LostFocus"/>
+
+                        <Label Content="Blue primary" Grid.Row="3" Grid.Column="0"/>
+                        <TextBox x:Name="xBlueTextBox" Grid.Row="3" Grid.Column="1" Text="0,15" IsEnabled="False" LostFocus="xBlueTextBox_LostFocus"/>
+                        <TextBox x:Name="yBlueTextBox" Grid.Row="3" Grid.Column="2" Text="0,06" IsEnabled="False" LostFocus="yBlueTextBox_LostFocus"/>
+
+                        <Label Content="White point" Grid.Row="4" Grid.Column="0"/>
+                        <TextBox x:Name="xWhiteTextBox" Grid.Row="4" Grid.Column="1" IsEnabled="False" Text="0,31273" LostFocus="xWhiteTextBox_LostFocus"/>
+                        <TextBox x:Name="yWhiteTextBox" Grid.Row="4" Grid.Column="2" IsEnabled="False" Text="0,32902" LostFocus="yWhiteTextBox_LostFocus"/>
+
+                        <Label Content="Gamma" Grid.Row="5" Grid.Column="1"/>
+                        <TextBox x:Name="gammaTextBox" Grid.Row="5" Grid.Column="2" Text="2,2" IsEnabled="False" LostFocus="gammaTextBox_LostFocus"/>
+                        
+                    </Grid>
+                </StackPanel>
+            </GroupBox>
+            <Button Name="saveButton" Content="Save Output" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Grid.Column="1" Margin="356,414,0,0" Click="saveButton_Click"/>
+            <Button x:Name="applyButton" Content="Apply color profile" IsEnabled="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="127" Grid.Column="1" Margin="300,189,0,0" Click="applyButton_Click"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="90*"/>
+            </Grid.RowDefinitions>
+
+            <Label Name="firstLabel" Content="Y" Grid.Column="0" Grid.Row="0" MinWidth="331" MinHeight="31"/>
+            <Canvas x:Name="firstCanvas" Grid.Column="0" Grid.Row="1" Background="White" Margin="2">
+                <Image x:Name="firstImage" Width="{Binding Path=ActualWidth, ElementName=firstCanvas}" Height="{Binding Path=ActualHeight, ElementName=firstCanvas}" Stretch="Fill"/>
+            </Canvas>
+
+            <Label Name="secondLabel" Content="Cb" Grid.Column="1" Grid.Row="0" MinWidth="331" MinHeight="31"/>
+            <Canvas x:Name="secondCanvas" Grid.Column="1" Grid.Row="1" Background="White" Margin="2">
+                <Image x:Name="secondImage" Width="{Binding Path=ActualWidth, ElementName=secondCanvas}" Height="{Binding Path=ActualHeight, ElementName=secondCanvas}" Stretch="Fill"/>
+            </Canvas>
+
+            <Label Name="thirdLabel" Content="Cr" Grid.Column="2" Grid.Row="0" MinWidth="331" MinHeight="31"/>
+            <Canvas x:Name="thirdCanvas" Grid.Column="2" Grid.Row="1" Background="White" Margin="2">
+                <Image x:Name="thirdImage" Width="{Binding Path=ActualWidth, ElementName=thirdCanvas}" Height="{Binding Path=ActualHeight, ElementName=thirdCanvas}" Stretch="Fill"/>
+            </Canvas>
+
+        </Grid>
+    </Grid>
+</Window>

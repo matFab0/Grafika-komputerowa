@@ -1,0 +1,15 @@
+Rozwiązania techniczne:
+- użyłem wbudowanej biblioteki z macierzami 4x4 System.Numerics, w której są gotowe funkcje takie jak CreateLookAt
+- modele zaimplementowałem sam, na podstawie parametryzacji. Każdy model to siatka trójkątów.
+- są trzy źródła światła (bez reflektorów)
+
+Instrukcja:
+- GroupBox "Suwaczki" - zestaw sliderów pozwalających na zmianę zmiennych ka, kd, ks, m, z (wysokość jednego z trzch świateł) oraz zmianę koloru światła.
+-GroupBox "Cieniowanie":
+	-przycisk "Płaskie" - cieniowanie płaskie sceny (wyznaczam kolor w centroidzie trójkąta i koloruję cały trójkąt na ten sam kolor)
+	-przycisk "Gourad" - cieniowanie Gourada sceny (wyznaczam kolory w wirzchołkach trójkąta i je interpoluję na cały trójkąt)
+	-przycisk "Phong" - cieniowanie Phonga sceny (podobnie do Gourada z tym, że interpoluję normalne z wierzchołków trójkąta i wyliczam kolor dla każdego piksela)
+-GroupBox "Kamery":
+	-przycisk "Główna" - nieruchoma kamera obejmująca całą scenę
+	-przycisk "Podąrzająca" - nieruchoma kamera śledząca poruszającą się kostkę
+	-przycisk "Poruszająca" - ruchoma kamera podąrzająca za kostką

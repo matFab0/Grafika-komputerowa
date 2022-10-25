@@ -1,0 +1,15 @@
+G:\Visual\Edytor_Graficzny\Edytor_Graficzny\bin\Debug\Edytor_Graficzny.exe.config
+G:\Visual\Edytor_Graficzny\Edytor_Graficzny\bin\Debug\Edytor_Graficzny.exe
+G:\Visual\Edytor_Graficzny\Edytor_Graficzny\bin\Debug\Edytor_Graficzny.pdb
+G:\Visual\Edytor_Graficzny\Edytor_Graficzny\obj\Debug\MainWindow.g.cs
+G:\Visual\Edytor_Graficzny\Edytor_Graficzny\obj\Debug\App.g.cs
+G:\Visual\Edytor_Graficzny\Edytor_Graficzny\obj\Debug\Edytor_Graficzny_MarkupCompile.cache
+G:\Visual\Edytor_Graficzny\Edytor_Graficzny\obj\Debug\Edytor_Graficzny_MarkupCompile.lref
+G:\Visual\Edytor_Graficzny\Edytor_Graficzny\obj\Debug\MainWindow.baml
+G:\Visual\Edytor_Graficzny\Edytor_Graficzny\obj\Debug\Edytor_Graficzny.g.resources
+G:\Visual\Edytor_Graficzny\Edytor_Graficzny\obj\Debug\Edytor_Graficzny.Properties.Resources.resources
+G:\Visual\Edytor_Graficzny\Edytor_Graficzny\obj\Debug\Edytor_Graficzny.csproj.GenerateResource.cache
+G:\Visual\Edytor_Graficzny\Edytor_Graficzny\obj\Debug\Edytor_Graficzny.csproj.CoreCompileInputs.cache
+G:\Visual\Edytor_Graficzny\Edytor_Graficzny\obj\Debug\Edytor_Graficzny.exe
+G:\Visual\Edytor_Graficzny\Edytor_Graficzny\obj\Debug\Edytor_Graficzny.pdb
+G:\Visual\Edytor_Graficzny\Edytor_Graficzny\obj\Debug\Edytor_Graficzny.csproj.AssemblyReference.cache

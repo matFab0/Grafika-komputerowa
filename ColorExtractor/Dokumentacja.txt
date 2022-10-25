@@ -1,0 +1,14 @@
+Instrukcja obsługi:
+	-przycisk "Load Image" - po naciśnięciu wyświetla się OpenFileDialog i użytkownik wybiera zdjęcie w formacie JPG lub PNG, które następnie zostaje załadowane do głównego okna (górne okno)
+	-combobox pod tym przyciskiem - użytkownik może wybrać model barw, na który ma być separowany obrazek (domyślnie YCbCr)
+	-przycisk "Separate Channels" - po naciśnięciu barwy obrazka są separowane do 3 poniższych okien
+	-groupbox "Lab Settings":
+		-pierwszy combobox - użytkownik może wybrać przestrzeń barw z dostępnych lub własną (domyślnie sRGB). Jeśli wybierze własną, to odblokują mu się następujące pola: combobox z iluminatem oraz textboxy z gammą i współrzędnymi R, G i B.
+		-drugi combobox - użytkownik może wybrać współrzędne punktu bieli z dostępnych własny. Jeśli wybierze własny, to odblokowują mu się textboxy ze współrzędnymi punktu bieli.
+		-textboxy - użytkownik może wpisywać wartości tylko, jeśli wybrał ustawienia własne.
+	Jeśli użytkownik wybierze przestrzeń przed załadowaniem obrazka, to program uzna, że obrazek znajduje się w tej przestzreni. Jeśli użytkownik wybierze przestrzeń po załadowaniu obrazka, to barwy obrazka zostaną zmienione z przestrzeni oryginalnej na nową.
+	Przy wyborze domyślnych wartości z comboboxu pierwszego zmiana jest automatyczna. W przeciwnym przypadku użytkownik po wprowadzeniu własnych parametrów musi nacisnąć przycisk "Apply color profile".
+	-przycisk "Apply color profile" - aktywny tylko, gdy użytkownik wybiera własne ustawienia i wartości w textboxach są konwertowalne na double. Po naciśnięciu następuje zmiana przestrzeni barw obrazka na nową.
+	-przycisk "Previous Color Profile" - użytkownik może cofnąć zmianę przestrzeni barw, tzn. program cofa się do ustawień sprzed zmiany przestrzeni na nową. Użytkownik może cofać zmiany, aż do początkowej przestrzeni.
+	-przycisk "Save Output" - użytkownik może zapisać obrazki z trzech dolnych okien w wybranym przez siebie folderze. Nazwy obrazków będą się składały z nazwy głównego obrazka i przyrostku danej barwy
+	(np. przyklad.jpg i model YCbCr output: przyklad_Y.pmg, przyklad_Cb.png, przyklad_Cr.png)

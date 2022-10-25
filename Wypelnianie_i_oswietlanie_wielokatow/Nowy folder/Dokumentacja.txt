@@ -1,0 +1,43 @@
+W Menu po prawej stronie znajdują się przyciski, suwaki i textboxy w 5 grupach:
+-Rysowanie:
+	-przycisk "Rysuj wielokąt": po naciśnięciu można rysować wielokąt punkt po punkcie lewym przyciskiem myszki, a zakończyć prawym (wielokąt ma min 3 wierzchołki). Początkowo kolor wielokąta, jak i wierzchołków są losowe.
+
+-Edytuj:
+	-przycisk "Przesuń punkt": można przesuwać wierzchołek dowolnego wielokąta naciskając na niego lewym orzyciskiem myszy i przesuwając go po ekranie
+	-przycisk "Przesuń wielokąt": można przesuwać dowolny wielokąt naciskając na jego krawędź lub wierzchołek lewym orzyciskiem myszy i przesuwając go po ekranie
+	-przycisk "Usuń punkt": po naciśnięciu lewym przciskiem na wierzchołek punkt jest usuwany
+	-przycisk "Dodaj punkt": po naciśnięciu na krawędź punkt jest dodawany na jej środku
+	-przycisk "Zmień pozycję Światła": można zmieniać pozycję światła (zaznaczoną obrazkiem żarówki na ekranie) naciskając LPM na konkretne miejsce
+Aby zakończyć daną edycję, trzeba nacisnąć drugi raz na przycisk.
+
+-Kolory:
+	-przycisk "Zmień kolor wierzchołka": po naciśnięciu wybieramy kolor z okna ColorDialog, po czym kursor zmienia nam się na "ołówek", a następnie wybieramy wierzchołek i zmienia się jego kolor.
+	-przycisk "Zmień kolor wielokąta": po naciśnięciu wybieramy kolor z okna ColorDialog, po czym kursor zmienia nam się na "ołówek", a następnie wybieramy wierzchołek lub krawędź wielokąta i zmienia się jego kolor.
+	-przycisk "Interpolacja wielokąta": po naciśnięciu kursor zmienia nam się na "ołówek", a następnie wybieramy wierzchołek lub krawędź wielokąta i zmienia się jego kolor na interpolację kolorów z wierzchołków.
+	-przycsik "Wczytaj bitmapę na wielokąt": po naciśnięciu otwiera nam się okno OpenFileDialog, z którego wybieramy plik (*.jpg lub *.png), a następnie wybieramy wierzchołek lub krawędź wielokąta i zmienia się jego wypełnienie na bitmapę.
+	-przycsik "Wczytaj bitmapę wysokości": po naciśnięciu otwiera nam się okno OpenFileDialog, z którego wybieramy plik(*.jpg lub *.png), który będzie naszą bitmapą, 
+	potem natychmiast otwiera się kolejne okno OpenFileDialog, z którego wybieramy plik(*.jpg lub *.png), który będzie mapą wysokości dla wcześniej wybranej bitmapy,
+	a następnie wybieramy wierzchołek lub krawędź wielokąta i zmienia się jego wypełnienie na bitmapę uwzględniając wysokości z mapy wysokości.
+-Suwaczki:
+	-suwak kd: ustawiamy wartość od 0 od 1 zmiennej kd potrzebnej przy wyliczaniu oświetlenia
+	-suwak ks: ustawiamy wartość od 0 od 1 zmiennej ks potrzebnej przy wyliczaniu oświetlenia
+	-suwak m: ustawiamy wartość od 1 od 100 zmiennej m potrzebnej przy wyliczaniu oświetlenia
+	-suwak z: ustawiamy wartość od 0.1 od 1000 zmiennej z, która reprezentuje wysokość światła
+	-suwak Light R: ustawiamy wartość od 0 od 1 dla zawartośći kolor czerwonego w świetle
+	-suwak Light G: ustawiamy wartość od 0 od 1 dla zawartośći kolor zielonego w świetle
+	-suwak Light B: ustawiamy wartość od 0 od 1 dla zawartośći kolor niebieskiego w świetle
+-Scena:
+	-przycsik "Start": wielokąty zaczynają się porzuszać z domyślnym zakresem prędkośći (10,20)
+	-przycisk "Stop": wielokąty zatrzymują się, możliwa jest wtedy zmiana zakresu ich prędkości.
+	-"Zakres prędkości":
+		-"lewy" textbox: wpisujemy minimalną prędkość(dodatnią)
+		-"prawy" textbox: wpisujemy maksymalną prędkość(dodatnią)
+	Wpisywanie wartości w te textboxy w trakcie trwania sceny nie zmienią zakresu.
+
+W folderze zamieściłem przykładowe pliki:
+	-"bitmap.jpg" - przykładowa bitmapa (szara płytka gresowa)
+	-"heightMap.png" - przykładowa mapa wysokośći (ukształtowanie mapy świata)
+Po nałożeniu heightmapy na bitmapę dostaniemy szary "obraz 3D" ukształtowania mapy świata (bez uwzględnienia oceanów).
+
+Program napisałem w Visual Studio 2019.
+Gdy uruchamiam go w wersji Visual Studio 2022 preview źle jest tworzone canvas i image (nie wypełniają automatycznie całego pola i tworzą się "za małe" nie wiedzieć czemu) i trzeba ustawić im ręcznie początkową szerokość w xamlu.

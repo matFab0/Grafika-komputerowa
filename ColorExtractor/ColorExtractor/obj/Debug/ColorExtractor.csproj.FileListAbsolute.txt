@@ -1,0 +1,15 @@
+G:\Visual\ColorExtractor\ColorExtractor\bin\Debug\ColorExtractor.exe.config
+G:\Visual\ColorExtractor\ColorExtractor\bin\Debug\ColorExtractor.exe
+G:\Visual\ColorExtractor\ColorExtractor\bin\Debug\ColorExtractor.pdb
+G:\Visual\ColorExtractor\ColorExtractor\obj\Debug\MainWindow.g.cs
+G:\Visual\ColorExtractor\ColorExtractor\obj\Debug\App.g.cs
+G:\Visual\ColorExtractor\ColorExtractor\obj\Debug\ColorExtractor_MarkupCompile.cache
+G:\Visual\ColorExtractor\ColorExtractor\obj\Debug\ColorExtractor_MarkupCompile.lref
+G:\Visual\ColorExtractor\ColorExtractor\obj\Debug\MainWindow.baml
+G:\Visual\ColorExtractor\ColorExtractor\obj\Debug\ColorExtractor.g.resources
+G:\Visual\ColorExtractor\ColorExtractor\obj\Debug\ColorExtractor.Properties.Resources.resources
+G:\Visual\ColorExtractor\ColorExtractor\obj\Debug\ColorExtractor.csproj.GenerateResource.cache
+G:\Visual\ColorExtractor\ColorExtractor\obj\Debug\ColorExtractor.csproj.CoreCompileInputs.cache
+G:\Visual\ColorExtractor\ColorExtractor\obj\Debug\ColorExtractor.exe
+G:\Visual\ColorExtractor\ColorExtractor\obj\Debug\ColorExtractor.pdb
+G:\Visual\ColorExtractor\ColorExtractor\obj\Debug\ColorExtractor.csproj.AssemblyReference.cache
